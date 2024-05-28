@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> anchangeNum : {{anChageNum}}</p>
+
+    <button @click="setstate">state++</button>
+    <button @click="setstate"
+    <script>
+        /*
+        */
+        const {createApp,ref,reactive} = vue;
+
+        createApp({
+            setup(){
+                const state = reactive({});
+                const fefstate = ref({num:0});
+                let anDhangeNum = reactive(0);
+                
+                function setate(){
+                    state.count++;
+                }
+                /*
+                */
+               function setRdfstate(){
+
+               }
+            }
+        })
+
+        creatApp({
+            setup(){
+
+            }
+        
+
+            }   
+            }
+
+        }).mount("#step02");
+    </script>
+    </body>
+    </html>

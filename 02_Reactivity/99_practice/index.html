@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./data.js"></script> 데이터js랑 연결부분 
+    <title>Document</title>
+    <!--
+     이미지가있네?
+     정보가있고
+     큰틀있네?
+     버튼을 눌렀을때 화면이바뀌네?  
+
+        
+        1. 데이터에서 선언된 이미지를 끌고와야겟네?   - 한개가 아니네? 9개인데 어떻게 끌고오지? 그러면 코딩에 입력된 값을 반복해서 출력해되겠네 반복은뭐냐 
+        아 -데이터가 중복되는 값이 많다. for 써서 갖고와야겠네 - 
+        반복은 for문이구나
+        
+        2. "정보도 끌고와야겠네"                                
+    
+        3. 큰틀이있으면 div을 이용해서 나눠야겟네?  - div 이미지, 정보,이름, id값으로 분리해야겠네?
+                                                선언되어있는 변수가 2개니까  중복이 일어나면 오류가 뜨겟죠?
+                                                중복이 되지않게 하기위해서는 나눠야겠네
+                                                조건문을 걸어야겠네 2개를 나눠써야하는데 참 과 거짓에 대한 값을 넣고 출력을하고
+                                                if 참 -  1번 데이터
+                                                else 거짓 2번 데이터
+
+        4. 버튼? 왜 누르면 바뀌지?
+         버튼 선언하면되는건가?
+         버튼 선언해서 바뀌는 시스템도 넣어야겠네? 두개를 쓰니까 
+         참과 거짓이 있을거고
+            if 참 -  1번 데이터
+            else 거짓 2번 데이터
+        각 참과 거짓부분에 대한 구역을 설정해야된다.
+
+
+    -->
+
+    <style>
+        .scholar, .msaSkill {
+            text-align: center;
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            overflow: hidden;   
+        }
+        img {
+            width: 300px;
+            height: auto;
+        }
+        .msaSkill-img {
+            width: 150px;
+            height: auto;
+        }
+        div{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>vue template 이벤트 적용</h1> 제목
+    <div id="app">
+        <button @click="toggleMode()"> 버튼을 변수로 취급한 이유(누를때마다 버튼의 이름을 바꾸기위해 변수로 선언)
+
+            <div>
+            <p v-if="isCharacterMode">Skill Mode</p>  참일떄 스킬 모드라는 버튼이 생성
+            <p v-else>Character Mode</p>              거짓일때 캐릭터모드라는 버튼이 생성
+            </div>
+            <!-- {{ isCharacterMode ? 'Skill Mode' : 'Character Mode' }} 삼항연산자로 만든 버튼 --> 
+        </button>
+
+        <div v-if="isCharacterMode">
+
+            <div v-for="scholar in jsonData" :key="scholar.id" class="scholar">
+                <div>
+                    <h4>이름 : {{ scholar.name }}</h4>  
+                    <p>소개 : {{ scholar.introduction }}</p>
+                </div>
+                <img :src="scholar.img" :alt="scholar.name" class="scholar-img">
+            </div>
+        </div>
+
+        <div v-else>
+            <div v-for="msaSkill in jsonSkillData" :key="msaSkill.id" class="msaSkill">
+                <div>
+                    <h4>이름 : {{ msaSkill.skill }}</h4>
+                    <p>소개 : {{ msaSkill.introduction }}</p>
+                </div>
+                <div>
+                    <img v-for="img in msaSkill.imgs" :src="img" :alt="msaSkill.skill" class="msaSkill-img">
+                </div>
+                    
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const jsonData = scholar;
+                const jsonSkillData = msaSkill;
+                const isCharacterMode = ref(true);
+
+                const toggleMode = () => {
+                    isCharacterMode.value = !isCharacterMode.value;
+                };
+
+                return {
+                    jsonData,
+                    jsonSkillData,
+                    isCharacterMode,
+                    toggleMode
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
