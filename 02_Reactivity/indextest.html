@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale= 1.0">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./data.js"></script> 데이터js랑 연결부분
+        <title>Document</title>
+    
+        <style>
+            .scholar,.msaSkill{
+                text-align:center;
+                width:500px;
+                height:500px;
+                border: 1px solid black;
+                overflow: hidden;
+            }
+            img{
+                width: 300px;
+                height: auto;
+            }
+            div{
+                float:left;
+            }
+        </style>
+
+</head>
+<body>
+    <h1>vue temlpate 이벤트 적용</h1>제목
+    <div id="app">
+        <button @clik="togeleMode()">버튼을 변수로 취급한 이유(누를때마다
+            <div>
+                <p v-if="isCharacterMode">Skill Mode</p>
+                <p v-else></p>
+            </div>
+        </button>
+    </div>
+</body>
+
+</html>

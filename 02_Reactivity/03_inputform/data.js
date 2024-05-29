@@ -15,7 +15,7 @@ const scholar = [
         "id": 3,
         "name": "Steven Paul Jobs",
         "introduction": "처음으로 PC에 GUI를 사용, mouse를 PC에 적용하여 대중화, 온라인 음악시장의 성공적인 모델을 보여준 인물",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg/225px-Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg"
+        "img    ": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg/225px-Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg"
     },
     {
         "id": 4,
@@ -46,11 +46,17 @@ const scholar = [
         "name": "Alan Turing",
         "introduction": "컴퓨터 과학과 인공지능 분야의 선구자로, 튜링 기계 개념과 튜링 테스트 등을 제시한 수학자",
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg/220px-Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg"
-    },{
+    },
+    {
         "id":9,
         "name" : "Evan You",
         "introduction" : "Vue.js와 프론트엔드 빌드 도구 Vite 프레임워크의 창시자로 해당 프레임워크의 대부분을 개발하고 오픈 소스로 공개하여 많은 개발자가 사용할 수 있도록 함.",
         "img" : "https://images.ctfassets.net/s5uo95nf6njh/5PpFIeuDxz2T89nZNED1EP/48d62a69f31a3ab6dfc58938eb7b8c2a/evan-you-portrait.jpg?w=1200&fm=jpg"
+    },
+    {"id":7,
+    "skill" : "animal",
+    "introduction" : " 동물.",
+
     }
 ] ;
 
